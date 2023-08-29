@@ -1,19 +1,3 @@
-<script setup lang="ts">
-import { ref } from "vue";
-import { ElMessage } from "element-plus";
-
-defineProps<{ msg: string }>();
-
-const count = ref(0);
-const input = ref("element-plus");
-
-const curDate = ref("");
-
-const toast = () => {
-    ElMessage.success("Hello");
-};
-</script>
-
 <template>
     <h1 color="$ep-color-primary">{{ msg }}</h1>
 
@@ -70,6 +54,27 @@ const toast = () => {
         >
     </p>
 </template>
+
+<script setup lang="ts">
+import { onMounted, ref } from "vue";
+import { ElMessage } from "element-plus";
+import envHelper from "~/utils/helper/env";
+
+defineProps<{ msg: string }>();
+
+const count = ref(0);
+const input = ref("element-plus");
+
+const curDate = ref("");
+
+const toast = () => {
+    ElMessage.success("Hello");
+};
+
+onMounted(() => {
+    console.log(envHelper.get("VITE_ENV"));
+});
+</script>
 
 <style>
 .ep-button {
