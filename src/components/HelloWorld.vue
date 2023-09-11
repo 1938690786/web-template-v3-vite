@@ -10,7 +10,6 @@
     <div class="mb-4">
         <el-button size="large" @click="toast">El Message</el-button>
     </div>
-
     <div class="my-2 text-center flex flex-wrap justify-center items-center">
         <el-button @click="count++">count is: {{ count }}</el-button>
         <el-button type="primary" @click="count++">count is: {{ count }}</el-button>
